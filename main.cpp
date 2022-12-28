@@ -87,24 +87,26 @@ points[4] = 3;
 */
  max_height = 0;
  for (i=0; i<points_number; i++) {
-    if ( points[i] > max_height )
-       max_height = points[i];
+    if ( points[i] > max_height ) {
+       max_height = points[i]; 
+    }
     max_height_on_left[i] = max_height;
  }
 
  max_height = 0;
  for (i = points_number; i>=0; --i) {
-    if ( points[i] > max_height )
+    if ( points[i] > max_height ) {
        max_height = points[i];
+    }
     max_height_on_right[i] = max_height;
  }
 
- for (i=0; i<points_number; i++)
+ for (i=0; i<points_number; i++) {
     cout << max_height_on_left[i] << " " << max_height_on_right[i] << "\n";
+ }
 
-free(points);
-free(max_height_on_left);
-free(max_height_on_right);
-
+ free(points);
+ free(max_height_on_left);
+ free(max_height_on_right);
  return 0;
 }
